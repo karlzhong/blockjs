@@ -1,0 +1,17 @@
+{
+  "name": "@tencent/blockjs-util-os",
+  "version": "0.0.0-alpha.0",
+  "description": "os",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "keywords": [
+    "util",
+    "os"
+  ],
+  "author": "karl",
+  "license": "ISC",
+  "devDependencies": {}
+}

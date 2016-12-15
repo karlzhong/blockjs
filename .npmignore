@@ -1,0 +1,8 @@
+.*.swp
+.*.swp
+._*
+.DS_Store
+.git
+.hg
+.svn
+npm-debug.log

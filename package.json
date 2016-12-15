@@ -1,5 +1,5 @@
 {
-  "name": "blockjs",
+  "name": "@tencent/blockjs",
   "version": "1.0.0",
   "description": "blocks of js",
   "main": "index.js",
@@ -15,5 +15,8 @@
     "js"
   ],
   "author": "karl",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "2.0.0-beta.28"
+  }
 }
