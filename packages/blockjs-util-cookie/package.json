@@ -1,7 +1,7 @@
 {
-  "name": "@tencent/blockjs-util-os",
-  "version": "0.0.0-alpha.0",
-  "description": "os",
+  "name": "@tencent/blockjs-util-cookie",
+  "version": "1.0.0",
+  "description": "cookie operation",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,7 @@
   "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
   "keywords": [
     "util",
-    "os"
+    "cookie"
   ],
   "author": "karl",
   "license": "ISC",

@@ -16,6 +16,11 @@
   ],
   "author": "karl",
   "license": "ISC",
+  "dependencies": {
+    "@tencent/blockjs-util-os":"packages/blockjs-util-os",
+    "@tencent/blockjs-util-cookie":"packages/blockjs-util-cookie",
+    "@tencent/blockjs-report-monitor":"packages/blockjs-report-monitor"
+  },
   "devDependencies": {
     "lerna": "2.0.0-beta.28"
   }

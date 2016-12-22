@@ -1,15 +1,15 @@
 {
-  "name": "@tencent/blockjs-util-os",
-  "version": "0.0.0-alpha.0",
-  "description": "os",
+  "name": "@tencent/blockjs-report-monitor",
+  "version": "1.0.0",
+  "description": "monitor report",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
   "keywords": [
-    "util",
-    "os"
+    "report",
+    "monitor"
   ],
   "author": "karl",
   "license": "ISC",

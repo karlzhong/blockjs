@@ -1,4 +1,4 @@
 *.log
 .DS_Store
-dst
+test
 node_modules
