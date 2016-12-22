@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-util-cookie",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "cookie operation",
   "main": "index.js",
   "scripts": {
