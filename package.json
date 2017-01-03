@@ -1,10 +1,11 @@
 {
   "name": "@tencent/blockjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "blocks of js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tlerna run build"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,13 @@
   ],
   "author": "karl",
   "license": "ISC",
-  "dependencies": {
-    "@tencent/blockjs-util-os":"packages/blockjs-util-os",
-    "@tencent/blockjs-util-cookie":"packages/blockjs-util-cookie",
-    "@tencent/blockjs-report-monitor":"packages/blockjs-report-monitor"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.12.2",
     "lerna": "2.0.0-beta.28"
   }
 }

@@ -5,5 +5,5 @@
 .git
 .hg
 .svn
-npm-debug.log
+*.log
 *.zip
