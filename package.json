@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "blocks of js",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,11 @@
   ],
   "author": "karl",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@tencent/blockjs-util-os": "0.0.1",
+    "@tencent/blockjs-util-cookie": "0.0.1",
+    "@tencent/blockjs-report-monitor": "0.0.1"
+  },
   "devDependencies": {
     "buble": "^0.15.1",
     "glob": "^7.1.1",
