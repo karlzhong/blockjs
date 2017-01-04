@@ -47,4 +47,8 @@ $ tlerna publish
 ```
 
 ## Change Logs
-2016.12.15 决定使用lerna管理npm模块依赖，约定目录结构
+2016.12.15
+- 决定使用lerna管理npm模块依赖，约定目录结构
+
+2017.01.04
+- 接入fbi建构
