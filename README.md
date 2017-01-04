@@ -21,6 +21,12 @@
 |--    .npmignore
 ```
 
+## 构建
+
+```bash
+$ fbi b
+```
+
 ## 发布
 1. 全局安装`tlerna`，因为tlerna是公司私有包，所以安装的时候需要在前面加上@tencent
 ```
