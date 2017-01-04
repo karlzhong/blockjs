@@ -3,6 +3,7 @@
 ## 简介
 
 移动开发常用组件模块
+> fbi + rollup + buble
 
 ## 开发
 1. clone 本仓库

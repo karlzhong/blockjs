@@ -4,8 +4,7 @@
   "description": "cookie operation",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "../../node_modules/.bin/babel src --out-dir lib"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
   "keywords": [

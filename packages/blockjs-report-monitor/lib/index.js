@@ -1,10 +1,7 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.setTable = setTable;
-exports.monitorReport = monitorReport;
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /**
  * monitor上报
  */
@@ -12,7 +9,7 @@ exports.monitorReport = monitorReport;
 var sendReport = function sendReport(url) {
     var img = new Image();
     img.src = url;
-    img.onload = img.onerror = function () {
+    img.onload = img.onerror = function (){
         img = this.onload = this.onerror = null;
     };
     // img = null;
@@ -54,3 +51,6 @@ function monitorReport(key, value) {
         timer = window.setTimeout(sendAll, 1000);
     }
 }
+
+exports.setTable = setTable;
+exports.monitorReport = monitorReport;
