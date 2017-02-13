@@ -19,7 +19,9 @@
   "dependencies": {
     "@tencent/blockjs-util-os": "0.0.1",
     "@tencent/blockjs-util-cookie": "0.0.1",
-    "@tencent/blockjs-report-monitor": "0.0.1"
+    "@tencent/blockjs-report-monitor": "0.0.1",
+    "@tencent/blockjs-report-cgi": "0.0.1",
+    "@tencent/blockjs-date-format": "0.0.1"
   },
   "devDependencies": {
     "buble": "^0.15.1",

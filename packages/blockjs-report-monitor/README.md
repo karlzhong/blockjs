@@ -8,7 +8,7 @@
 # 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
 
 # 引入
-import {setTable, monitorReport} from 'blockjs-report-monitor';
+import {setTable, monitorReport} from '@tencent/blockjs-report-monitor'
 
 # 设置上报属性
 setTable({
