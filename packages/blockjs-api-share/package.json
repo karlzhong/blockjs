@@ -1,0 +1,16 @@
+{
+  "name": "@tencent/blockjs-api-share",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "share",
+    "mobileqq"
+  ],
+  "author": "cheeqi",
+  "license": "MIT"
+}
