@@ -1,2 +1,102 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var ADTAG_QQ = 'qq';
+var ADTAG_QZONE = 'qzone';
+var ADTAG_WX = 'wx';
+var ADTAG_TIMELINE = 'timeline';
+
+
+
+/**
+ * 相对路径转绝对路径 
+ */
+
+
+/**
+ * 去掉URL参数 
+ * @param {string} url  
+ * @param {string} name 
+ * @returns {string} 处理后的URL
+ */
+
+
+/**
+ * 去掉URL参数 
+ * @param {string} url  
+ * @param {string} name 
+ * @param {string} val 
+ * @returns {string} 处理后的URL
+ */
+function addUrlParam(url, name, val) {
+    return url + (location.href.match('?') ? '&' : '?') + name + '=' + val;
+}
+
+function addAdtag(url, name, val, from, to) {
+    return addUrlParam(url, name, val.replace('FROM', from).replace('TO', to));
+}
+
+var shareData;
+
+function setMqqShare(_shareData) {
+    shareData = _shareData;
+
+    setTimeout(function () {
+        mqq.ui.setOnShareHandler(function (type) {
+            onShareHandler(type);
+        });
+    }, 200);
+}
+
+
+var onShareHandler = function (type) {
+    //0：QQ好友;
+    //1：QQ空间;
+    //2：微信好友
+    //3：微信朋友圈
+    var shareUrl = shareData.url;
+
+    //这里可以根据type调整链接参数
+    switch (type) {
+        case 0:
+            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QQ);
+            break
+        case 1:
+            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QZONE);
+            break
+        case 2:
+            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_WX);
+            break
+        case 3:
+            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_TIMELINE);
+            break
+    }
+    // 分享到朋友圈之后，由于只显示title，这里往往要对title做一定修改
+    var title = type == 3 ? shareData.wxTitle || shareData.title : shareData.title;
+
+    var _shareData = {
+        title: title,
+        desc: shareData.desc,
+        share_type: type,
+        back: true,
+        image_url: shareData.imgUrl,
+        share_url: shareUrl,
+    };
+
+    if (shareData.puin !== undefined) {
+        _shareData.puin = shareData.puin;
+    }
+
+    if (shareData.sourceName !== undefined) {
+        _shareData.sourceName = shareData.sourceName;
+    }
+
+    mqq.ui.shareMessage(_shareData, function (res) {
+        //这里可以添加分享成功的上报
+    });
+
+
+};
+
+exports.setMqqShare = setMqqShare;

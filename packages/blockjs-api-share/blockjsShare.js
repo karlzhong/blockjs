@@ -1,7 +1,10 @@
-'use strict';
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (factory((global.blockjsShare = global.blockjsShare || {})));
+}(this, (function (exports) { 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
+// 这里之所以没有写在一个对象里，是为了rollup可以压缩得更小
 var ADTAG_QQ = 'qq';
 var ADTAG_QZONE = 'qzone';
 var ADTAG_WX = 'wx';
@@ -30,7 +33,7 @@ function clearUrlParam(url, name) {
 }
 
 /**
- * 去掉URL参数 
+ * 增加URL参数 
  * @param {string} url  
  * @param {string} name 
  * @param {string} val 
@@ -40,21 +43,54 @@ function addUrlParam(url, name, val) {
     return url + (location.href.match('?') ? '&' : '?') + name + '=' + val;
 }
 
+/**
+ * 给URL增加adtag 
+ * @param {string} url
+ * @param {string} name adtag name
+ * @param {string} val adtag 的格式字符串，如 FROM_to_TO 
+ * @param {string} from 分享源头
+ * @param {string} to 分享目的地
+ * 
+ */
 function addAdtag(url, name, val, from, to) {
     return addUrlParam(url, name, val.replace('FROM', from).replace('TO', to));
 }
 
 var shareData;
+var isInit = false;
 
 var IMG_SIZE = 120;
 
 function setWXShare(_shareData) {
     shareData = _shareData;
+    if (!isInit) {
+        isInit = true;
+        initShare();
+    }
 }
 
-var onBridgeReady = function () {
+function initShare() {
+    if (typeof top.window.WeixinJSBridge == "undefined" || !top.window.WeixinJSBridge.invoke) {
+        //没有就监听ready事件
+        if (document.addEventListener) {
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        } else if (document.attachEvent) {
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }
+    } else {
+        //初始化结束直接就执行吧！
+        onBridgeReady();
+    }
+}
 
+function onBridgeReady() {
     var _WeixinJSBridge = WeixinJSBridge;
+
+    var errorFun = function (res) {
+        _WeixinJSBridge.log(res.err_msg);
+    };
+
 
     //  分享到QQ
     _WeixinJSBridge.on('menu:share:qq', function () {
@@ -62,10 +98,8 @@ var onBridgeReady = function () {
             title: shareData.title,
             desc: shareData.desc,
             img_url: shareData.imageUrl,
-            link: shareData.url + '&adtag=qq'
-        }, function (res) {
-            _WeixinJSBridge.log(res.err_msg);
-        });
+            link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QQ)
+        }, errorFun);
     });
 
     // 分享到空间
@@ -74,10 +108,8 @@ var onBridgeReady = function () {
             title: shareData.title,
             desc: shareData.desc,
             img_url: shareData.imageUrl,
-            link: shareData.url + '&adtag=qq'
-        }, function (res) {
-            _WeixinJSBridge.log(res.err_msg);
-        });
+            link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QZONE)
+        }, errorFun);
     });
 
     // 朋友圈 
@@ -85,24 +117,20 @@ var onBridgeReady = function () {
         _WeixinJSBridge.invoke('shareTimeline', {
             img_width: IMG_SIZE,
             img_height: IMG_SIZE,
+            title: shareData.wxTitle || shareData.title, // 优先使用wxTitle
             desc: shareData.desc, //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
             img_url: shareData.imageUrl,
-            link: shareData.url + '&adtag=wx.to.timeline',
-            title: shareData.wxTitle || shareData.title // 优先使用wxTitle
-        }, function (res) {
-            _WeixinJSBridge.log(res.err_msg);
-        });
+            link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_TIMELINE)
+        }, errorFun);
     });
 
     //同步到腾讯微博（新版本微信已去除该按钮）
-    _WeixinJSBridge.on('menu:share:weibo', function () {
-        _WeixinJSBridge.invoke('shareWeibo', {
-            "content": desc,
-            "url": share_url + '&adtag=wb'
-        }, function (res) {
-            _WeixinJSBridge.log(res.err_msg);
-        });
-    });
+    // _WeixinJSBridge.on('menu:share:weibo', function () {
+    //     _WeixinJSBridge.invoke('shareWeibo', {
+    //         "content": desc,
+    //         "url": share_url + '&adtag=wb'
+    //     }, errorFun)
+    // })
 
     //分享给朋友
     _WeixinJSBridge.on('menu:share:appmessage', function (argv) {
@@ -110,26 +138,11 @@ var onBridgeReady = function () {
             img_url: shareData.imageUrl,
             img_width: IMG_SIZE,
             img_height: IMG_SIZE,
-            link: shareData.url + '&adtag=wx.to.timeline',
+            link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_WX),
             title: shareData.title,
             desc: shareData.desc,
-        }, function (res) {
-            _WeixinJSBridge.log(res.err_msg);
-        });
+        }, errorFun);
     });
-};
-
-if (typeof top.window.WeixinJSBridge == "undefined" || !top.window.WeixinJSBridge.invoke) {
-    //没有就监听ready事件
-    if (document.addEventListener) {
-        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
-    } else if (document.attachEvent) {
-        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
-        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
-    }
-} else {
-    //初始化结束直接就执行吧！
-    onBridgeReady();
 }
 
 var shareData$1;
@@ -150,7 +163,13 @@ var onShareHandler = function (type) {
     //1：QQ空间;
     //2：微信好友
     //3：微信朋友圈
-    var shareUrl = shareData$1.url;
+    var url = shareData$1.url;
+    var adtagName = shareData$1.adtagName;
+    var adtagVal = shareData$1.adtagVal;
+    var title = shareData$1.title;
+    var wxTitle = shareData$1.wxTitle;
+    var desc = shareData$1.desc;
+    var imgUrl = shareData$1.imgUrl;
 
     //这里可以根据type调整链接参数
     switch (type) {
@@ -168,11 +187,11 @@ var onShareHandler = function (type) {
             break
     }
     // 分享到朋友圈之后，由于只显示title，这里往往要对title做一定修改
-    var title = type == 3 ? shareData$1.wxTitle || shareData$1.title : shareData$1.title;
+    var shareTitle = type == 3 ? wxTitle || title : title;
 
     var _shareData = {
-        title: title,
-        desc: shareData$1.desc,
+        title: shareTitle,
+        desc: desc,
         share_type: type,
         back: true,
         image_url: shareData$1.imgUrl,
@@ -261,3 +280,7 @@ function checkShareData(ref) {
 }
 
 exports.setBlockJsShare = setBlockJsShare;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
