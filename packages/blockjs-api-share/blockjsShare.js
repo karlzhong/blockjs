@@ -4,7 +4,7 @@
     (factory((global.blockjsShare = global.blockjsShare || {})));
 }(this, (function (exports) { 'use strict';
 
-// 这里之所以没有写在一个对象里，是为了rollup可以压缩得更小
+// 这里之所以没有写在一个对象里，是为了rollup合并后，可以压缩得更小
 var ADTAG_QQ = 'qq';
 var ADTAG_QZONE = 'qzone';
 var ADTAG_WX = 'wx';
@@ -61,6 +61,8 @@ var isInit = false;
 
 var IMG_SIZE = 120;
 
+var MENU_SHARE = 'menu:share:';
+
 function setWXShare(_shareData) {
     shareData = _shareData;
     if (!isInit) {
@@ -93,7 +95,7 @@ function onBridgeReady() {
 
 
     //  分享到QQ
-    _WeixinJSBridge.on('menu:share:qq', function () {
+    _WeixinJSBridge.on(MENU_SHARE + 'qq', function () {
         _WeixinJSBridge.invoke("shareQQ", {
             title: shareData.title,
             desc: shareData.desc,
@@ -103,7 +105,7 @@ function onBridgeReady() {
     });
 
     // 分享到空间
-    _WeixinJSBridge.on("menu:share:QZone", function () {
+    _WeixinJSBridge.on(MENU_SHARE + "QZone", function () {
         _WeixinJSBridge.invoke("shareQZone", {
             title: shareData.title,
             desc: shareData.desc,
@@ -113,7 +115,7 @@ function onBridgeReady() {
     });
 
     // 朋友圈 
-    _WeixinJSBridge.on('menu:share:timeline', function (e) {
+    _WeixinJSBridge.on(MENU_SHARE + 'timeline', function (e) {
         _WeixinJSBridge.invoke('shareTimeline', {
             img_width: IMG_SIZE,
             img_height: IMG_SIZE,
@@ -125,7 +127,7 @@ function onBridgeReady() {
     });
 
     //同步到腾讯微博（新版本微信已去除该按钮）
-    // _WeixinJSBridge.on('menu:share:weibo', function () {
+    // _WeixinJSBridge.on(MENU_SHARE+'weibo', function () {
     //     _WeixinJSBridge.invoke('shareWeibo', {
     //         "content": desc,
     //         "url": share_url + '&adtag=wb'
@@ -133,7 +135,7 @@ function onBridgeReady() {
     // })
 
     //分享给朋友
-    _WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+    _WeixinJSBridge.on(MENU_SHARE + 'appmessage', function (argv) {
         _WeixinJSBridge.invoke("sendAppMessage", {
             img_url: shareData.imageUrl,
             img_width: IMG_SIZE,
