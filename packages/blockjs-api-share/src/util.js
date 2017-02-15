@@ -1,4 +1,4 @@
-// 这里之所以没有写在一个对象里，是为了rollup可以压缩得更小
+// 这里之所以没有写在一个对象里，是为了rollup合并后，可以压缩得更小
 export const ADTAG_QQ = 'qq';
 export const ADTAG_QZONE = 'qzone';
 export const ADTAG_WX = 'wx';
