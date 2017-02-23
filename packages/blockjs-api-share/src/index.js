@@ -17,7 +17,7 @@ import {
 
 const __DEV__ = true;
 
-export function setBlockJsShare(shareData) {
+export default function setBlockJsShare(shareData) {
     shareData = checkShareData(shareData)
     setWXShare(shareData)
     setMqqShare(shareData)

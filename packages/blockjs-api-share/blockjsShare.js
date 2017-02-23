@@ -1,8 +1,8 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global.blockjsShare = global.blockjsShare || {})));
-}(this, (function (exports) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (global.blockjsShare = factory());
+}(this, (function () { 'use strict';
 
 // 这里之所以没有写在一个对象里，是为了rollup合并后，可以压缩得更小
 var ADTAG_QQ = 'qq';
@@ -281,8 +281,6 @@ function checkShareData(ref) {
     }
 }
 
-exports.setBlockJsShare = setBlockJsShare;
-
-Object.defineProperty(exports, '__esModule', { value: true });
+return setBlockJsShare;
 
 })));
