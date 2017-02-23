@@ -1,0 +1,26 @@
+{
+  "name": "@tencent/blockjs-api-share",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "share",
+    "mobileqq"
+  ],
+  "author": "cheeqi",
+  "license": "MIT",
+  "devDependencies": {
+    "buble": "^0.15.1",
+    "glob": "^7.1.1",
+    "lerna": "2.0.0-beta.28",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.39.2",
+    "rollup-pluginutils": "^1.5.2",
+    "uglify-js": "^2.7.5"
+  }
+}
