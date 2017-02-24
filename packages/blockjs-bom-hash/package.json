@@ -1,0 +1,17 @@
+{
+  "name": "@tencent/blockjs-bom-hash",
+  "version": "0.0.1",
+  "description": "hash",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "keywords": [
+    "hash"
+  ],
+  "author": "karl",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

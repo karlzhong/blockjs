@@ -6,7 +6,8 @@ const glob = require('glob')
 const rm = require('rimraf')
 const buble = require('./plugins/buble')(require)
 const root = 'packages/'
-function noop() { }
+
+function noop() {}
 
 // 遍历已有模块
 const components = glob.sync(root + '*')
@@ -25,6 +26,10 @@ components.map(item => {
     })
 
     // console.log(entries) ==> [ 'packages/cookie/src/index.js' ], [ 'packages/monitor/src/index.js' ]
+    if (entries.length === 0) {
+        return false
+    }
+    // console.log(entries)
 
     // 定义输出目录
     const folder = `${item}/lib`;

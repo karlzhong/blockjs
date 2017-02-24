@@ -1,0 +1,17 @@
+{
+  "name": "@tencent/blockjs-api-openqq",
+  "version": "0.0.1",
+  "description": "openqq",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "keywords": [
+    "openqq"
+  ],
+  "author": "karl",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

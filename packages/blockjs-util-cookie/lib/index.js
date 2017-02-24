@@ -7,7 +7,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 */
 function getCookie(n) {
     var m = document.cookie.match(new RegExp("(^| )" + n + "=([^;]*)(;|$)"));
-    return !m ? "" : decodeURIComponent(m[2]);
+    return !m ? "" : decodeURIComponent(m[2])
 }
 
 function setCookie(name, value, domain, path, hour) {
@@ -22,7 +22,7 @@ function delCookie(name, domain, path) {
 
 function getUin() {
     var u = getCookie("uin");
-    return !u ? null : parseInt(u.substring(1, u.length), 10);
+    return !u ? null : parseInt(u.substring(1, u.length), 10)
 }
 
 exports.getCookie = getCookie;
