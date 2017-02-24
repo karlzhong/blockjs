@@ -1,15 +1,14 @@
 {
-  "name": "@tencent/blockjs-date-format",
+  "name": "@tencent/blockjs-code-token",
   "version": "0.0.2",
-  "description": "blockjs date output format",
+  "description": "token",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
   "keywords": [
-    "date",
-    "format"
+    "token"
   ],
   "author": "karl",
   "license": "ISC",

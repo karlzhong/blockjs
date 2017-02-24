@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+// 这里之所以没有写在一个对象里，是为了rollup合并后，可以压缩得更小
 var ADTAG_QQ = 'qq';
 var ADTAG_QZONE = 'qzone';
 var ADTAG_WX = 'wx';
@@ -30,7 +31,7 @@ function clearUrlParam(url, name) {
 }
 
 /**
- * 去掉URL参数 
+ * 增加URL参数 
  * @param {string} url  
  * @param {string} name 
  * @param {string} val 
@@ -40,6 +41,15 @@ function addUrlParam(url, name, val) {
     return url + (location.href.match('?') ? '&' : '?') + name + '=' + val;
 }
 
+/**
+ * 给URL增加adtag 
+ * @param {string} url
+ * @param {string} name adtag name
+ * @param {string} val adtag 的格式字符串，如 FROM_to_TO 
+ * @param {string} from 分享源头
+ * @param {string} to 分享目的地
+ * 
+ */
 function addAdtag(url, name, val, from, to) {
     return addUrlParam(url, name, val.replace('FROM', from).replace('TO', to));
 }

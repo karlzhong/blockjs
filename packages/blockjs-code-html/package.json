@@ -1,16 +1,13 @@
 {
-  "name": "@tencent/blockjs-date-format",
+  "name": "@tencent/blockjs-code-html",
   "version": "0.0.2",
-  "description": "blockjs date output format",
+  "description": "html encode & decode",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
-  "keywords": [
-    "date",
-    "format"
-  ],
+  "keywords": [],
   "author": "karl",
   "license": "ISC",
   "dependencies": {},

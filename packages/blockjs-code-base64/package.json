@@ -1,15 +1,14 @@
 {
-  "name": "@tencent/blockjs-date-format",
+  "name": "@tencent/blockjs-code-base64",
   "version": "0.0.2",
-  "description": "blockjs date output format",
+  "description": "base64",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
   "keywords": [
-    "date",
-    "format"
+    "base64"
   ],
   "author": "karl",
   "license": "ISC",

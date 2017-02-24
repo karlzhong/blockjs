@@ -2,6 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+// 这里之所以没有写在一个对象里，是为了rollup合并后，可以压缩得更小
 var ADTAG_QQ = 'qq';
 var ADTAG_QZONE = 'qzone';
 var ADTAG_WX = 'wx';
@@ -23,7 +24,7 @@ var ADTAG_TIMELINE = 'timeline';
 
 
 /**
- * 去掉URL参数 
+ * 增加URL参数 
  * @param {string} url  
  * @param {string} name 
  * @param {string} val 
@@ -33,6 +34,15 @@ function addUrlParam(url, name, val) {
     return url + (location.href.match('?') ? '&' : '?') + name + '=' + val;
 }
 
+/**
+ * 给URL增加adtag 
+ * @param {string} url
+ * @param {string} name adtag name
+ * @param {string} val adtag 的格式字符串，如 FROM_to_TO 
+ * @param {string} from 分享源头
+ * @param {string} to 分享目的地
+ * 
+ */
 function addAdtag(url, name, val, from, to) {
     return addUrlParam(url, name, val.replace('FROM', from).replace('TO', to));
 }
@@ -55,7 +65,13 @@ var onShareHandler = function (type) {
     //1：QQ空间;
     //2：微信好友
     //3：微信朋友圈
-    var shareUrl = shareData.url;
+    var url = shareData.url;
+    var adtagName = shareData.adtagName;
+    var adtagVal = shareData.adtagVal;
+    var title = shareData.title;
+    var wxTitle = shareData.wxTitle;
+    var desc = shareData.desc;
+    var imgUrl = shareData.imgUrl;
 
     //这里可以根据type调整链接参数
     switch (type) {
@@ -73,11 +89,11 @@ var onShareHandler = function (type) {
             break
     }
     // 分享到朋友圈之后，由于只显示title，这里往往要对title做一定修改
-    var title = type == 3 ? shareData.wxTitle || shareData.title : shareData.title;
+    var shareTitle = type == 3 ? wxTitle || title : title;
 
     var _shareData = {
-        title: title,
-        desc: shareData.desc,
+        title: shareTitle,
+        desc: desc,
         share_type: type,
         back: true,
         image_url: shareData.imgUrl,
