@@ -5,10 +5,13 @@
 
 ## 使用方式
 
+npm引入方式
+```js 
+import * as blockjsShare from 'blockjs-api-share'
+```
+
 基本设置
 ```javascript
-import * as blockjsShare from 'blockjs-api-share'
-
 blockjsShare({
     title: "分享标题",
     wxTitle: "朋友圈标题（可选，默认为title）",
@@ -22,14 +25,12 @@ blockjsShare({
 
 高级设置
 ```javascript
-import * as blockjsShare from 'blockjs-api-share'
-
 blockjsShare({
     title: "分享标题",
     desc: "分享文案",
     url: "分享url",
     imgUrl: "img url",
-    wxTitle: "微信标题（可选）",
+    wxTitle: "朋友圈标题（可选，默认为title）",
 
     // QQ内小尾巴相关设置
     puin: 2720152058, 
