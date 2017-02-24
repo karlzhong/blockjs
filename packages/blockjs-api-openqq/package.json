@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-api-openqq",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "openqq",
   "main": "lib/index.js",
   "scripts": {

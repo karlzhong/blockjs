@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-bom-search",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "search",
   "main": "lib/index.js",
   "scripts": {

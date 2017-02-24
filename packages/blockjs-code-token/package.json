@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-code-token",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "token",
   "main": "lib/index.js",
   "scripts": {

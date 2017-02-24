@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-report-cgi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "cgi report",
   "main": "lib/index.js",
   "scripts": {
