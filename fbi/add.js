@@ -37,7 +37,7 @@ function copyFile(src, dst, options) {
                 throw err
               }
 
-              console.log('copy done---->',path)
+              // console.log('copy done---->',path)
 
             })
 
