@@ -11,6 +11,7 @@ module.exports = {
         options: ''
     },
     alias: {
+        a: 'add',
         b: 'build',
         s: 'serve'
     }
