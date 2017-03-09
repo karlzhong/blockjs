@@ -14,6 +14,7 @@ const gethash = require('@tencent/blockjs-bom-hash')
 const openqq = require('@tencent/blockjs-api-openqq')
 const loadscript = require('@tencent/blockjs-util-loadscript')
 const apishare = require('@tencent/blockjs-api-share')
+const getmaxlen = require('@tencent/blockjs-string-getmaxlen')
 
 module.exports = {
   os: os,
@@ -28,5 +29,6 @@ module.exports = {
   gethash: gethash,
   openqq: openqq,
   loadscript: loadscript,
-  apishare: apishare
+  apishare: apishare,
+  getmaxlen: getmaxlen
 }
