@@ -6,17 +6,39 @@ Object.defineProperty(exports, '__esModule', { value: true });
  * 获取当前操作系统类型
  */
 var ua = navigator.userAgent;
-var isAndroid = /(?:Android)/.test(ua);
-var isFirefox = /(?:Firefox)/.test(ua);
-var isMobile = /(?:Mobile)/.test(ua);
-var isAndroidPhone = isAndroid && isMobile;
-var isAndroidPad = isAndroid && !isAndroidPhone;
-var isIpad = /(?:iPad.*OS)/.test(ua);
-var isIphone = !isIpad && /(?:iPhone\sOS)/.test(ua);
-var isTablet = isIpad || isAndroidPad || /(?:PlayBook)/.test(ua) || isFirefox && /(?:Tablet)/.test(ua);
-var isPhone = !isTablet && (isAndroid || isIphone || /(?:(webOS|hpwOS)[\s\/]|BlackBerry.*Version\/|BB10.*Version\/|CriOS\/)/.test(ua) || isFirefox && isMobile);
-var isIOS = isIpad || isIphone;
-var isPc = !isAndroid && !isIphone && !isIpad;
+function isAndroid() {
+  return /(?:Android)/.test(ua)
+}
+function isFirefox() {
+  return /(?:Firefox)/.test(ua)
+}
+function isMobile() {
+  return /(?:Mobile)/.test(ua)
+}
+function isAndroidPhone() {
+  return isAndroid() && isMobile()
+}
+function isAndroidPad() {
+  return isAndroid() && !isAndroidPhone()
+}
+function isIpad() {
+  return /(?:iPad.*OS)/.test(ua)
+}
+function isIphone() {
+  return !isIpad() && /(?:iPhone\sOS)/.test(ua)
+}
+function isTablet() {
+  return isIpad() || isAndroidPad() || /(?:PlayBook)/.test(ua) || isFirefox() && /(?:Tablet)/.test(ua)
+}
+function isPhone() {
+  return !isTablet() && (isAndroid() || isIphone() || /(?:(webOS|hpwOS)[\s\/]|BlackBerry.*Version\/|BB10.*Version\/|CriOS\/)/.test(ua) || isFirefox() && isMobile())
+}
+function isIOS() {
+  return isIpad() || isIphone()
+}
+function isPc() {
+  return !isAndroid() && !isIphone() && !isIpad()
+}
 
 exports.isAndroid = isAndroid;
 exports.isFirefox = isFirefox;
