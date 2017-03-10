@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-util-os",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "os",
   "main": "lib/index.js",
   "scripts": {
