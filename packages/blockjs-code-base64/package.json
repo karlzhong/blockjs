@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-code-base64",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "base64",
   "main": "lib/index.js",
   "scripts": {

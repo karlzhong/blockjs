@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-report-monitor",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "monitor report",
   "main": "lib/index.js",
   "scripts": {
