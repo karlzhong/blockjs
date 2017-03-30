@@ -1,8 +1,6 @@
-(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global['blockjs-util-loadscript'] = global['blockjs-util-loadscript'] || {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  * 异步拉取脚本
@@ -28,7 +26,3 @@ function loadScript(src, callback, err) {
 }
 
 exports.loadScript = loadScript;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));

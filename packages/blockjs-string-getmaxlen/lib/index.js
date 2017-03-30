@@ -1,8 +1,6 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global['blockjs-string-getmaxlen'] = global['blockjs-string-getmaxlen'] || {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  * blockjs-string-getmaxlen
@@ -35,7 +33,3 @@ function getmaxlen(str, maxlen) {
 }
 
 exports.getmaxlen = getmaxlen;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));

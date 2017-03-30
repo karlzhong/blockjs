@@ -33,6 +33,7 @@ components.map(item => {
 
     // 定义输出目录
     const folder = `${item}/lib`;
+    const umdfolder = `${item}/dist`;
 
     // 生成目录之前先删除旧目录
     rm.sync(folder)
@@ -43,6 +44,7 @@ components.map(item => {
     return entries.map(entry => {
         // 单个模块资源(js文件) => packages/cookie/lib/index.js, packages/monitor/lib/index.js
         const distFile = `${folder}/${entry.split('/').pop()}`
+        const umdFile = `${umdfolder}/${entry.split('/').pop()}`
 
         return rollup.rollup({
 
@@ -77,13 +79,22 @@ components.map(item => {
 
             // 另一种是rollup本身api的生成
             bundle.write({
-                format: 'umd',
-                moduleName: componentName,
+                format: 'cjs',
                 dest: distFile,
                 sourceMap: false
             }).then(() => {
                 ctx.log(`${distFile} done!`)
             });
+
+            bundle.write({
+                format: 'umd',
+                moduleName: componentName,
+                dest: umdFile,
+                sourceMap: false
+            }).then(() => {
+                ctx.log(`${umdFile} done!`)
+            });
+
         });
     })
 })

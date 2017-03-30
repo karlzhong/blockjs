@@ -1,8 +1,6 @@
-(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global['blockjs-date-format'] = global['blockjs-date-format'] || {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  * 对日期进行格式化，
@@ -50,7 +48,3 @@ function dateFormat(ref) {
 }
 
 exports.dateFormat = dateFormat;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));

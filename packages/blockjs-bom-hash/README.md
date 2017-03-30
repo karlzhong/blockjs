@@ -3,15 +3,27 @@
 ## 简介
 gethash
 
-## 使用
-```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
+## Using npm:
+```shell
+// 加载整个blockjs
+$ tnpm install @tencent/blockjs --save
 
-# 引入
+// 或者单独加载子模块
+$ tnpm install @tencent/blockjs-bom-hash --save
+```
+
+## 使用
+```js
+
+// 引入
 
 const gethash = require('@tencent/blockjs-bom-hash')
 
-# use
+// or
+
+import gethash from '@tencent/blockjs-bom-hash'
+
+// use
 let hash = gethash('ad')
 
 ```

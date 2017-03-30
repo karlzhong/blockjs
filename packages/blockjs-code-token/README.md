@@ -3,13 +3,26 @@
 ## 简介
 token
 
-## 使用
-```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
+## Using npm:
+```shell
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
 
-# 引入
+# 只安装子模块
+$ tnpm install @tencent/blockjs-code-token --save
+```
+
+## 使用
+```js
+
+// 引入
 const getCSRFToken = require('@tencent/blockjs-code-token')
 
-var csrf_token = getCSRFToken();
+// or
+
+import getCSRFToken from '@tencent/blockjs-code-token'
+
+// use
+const csrf_token = getCSRFToken();
 
 ```

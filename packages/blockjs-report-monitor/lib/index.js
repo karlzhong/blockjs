@@ -1,8 +1,6 @@
-(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global['blockjs-report-monitor'] = global['blockjs-report-monitor'] || {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  * monitor上报
@@ -56,7 +54,3 @@ function monitorReport(key, value) {
 
 exports.setTable = setTable;
 exports.monitorReport = monitorReport;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));

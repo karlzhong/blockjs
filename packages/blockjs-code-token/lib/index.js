@@ -1,8 +1,6 @@
-(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global['blockjs-code-token'] = global['blockjs-code-token'] || {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  *
@@ -197,7 +195,3 @@ function getCSRFToken() {
 }
 
 exports.getCSRFToken = getCSRFToken;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));

@@ -9,16 +9,23 @@ cookie相关操作
 - `delCookie` 删除cookie: delCookie(name, domain, path)
 - `getUin` 获取uin（登录之后）: getUin()
 
-## 使用
-```
+## Using npm:
+```shell
 # 全部安装blockjs
 $ tnpm install @tencent/blockjs --save
 
-# 只安装cookie模块
+# 只安装子模块
 $ tnpm install @tencent/blockjs-util-cookie --save
+```
 
-# 引入
+## 使用
+```js
+
+// 引入
 const cookie = require('@tencent/blockjs-util-cookie')
+
+// or
+import cookie from '@tencent/blockjs-util-cookie'
 
 cookie.getCookie('xxx')
 

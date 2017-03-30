@@ -1,8 +1,6 @@
-(function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-    typeof define === 'function' && define.amd ? define(['exports'], factory) :
-    (factory((global['blockjs-api-share'] = global['blockjs-api-share'] || {})));
-}(this, (function (exports) { 'use strict';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 // 这里之所以没有写在一个对象里，是为了rollup合并后，可以压缩得更小
 var ADTAG_QQ = 'qq';
@@ -65,7 +63,3 @@ exports.toAbsPath = toAbsPath;
 exports.clearUrlParam = clearUrlParam;
 exports.addUrlParam = addUrlParam;
 exports.addAdtag = addAdtag;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
