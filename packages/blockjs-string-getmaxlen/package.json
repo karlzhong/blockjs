@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-string-getmaxlen",
-  "version": "0.0.4",
+  "version": "0.0.9",
   "description": "字符串中返回指定长度字符，也即是业务中的限制字数",
   "main": "lib/index.js",
   "scripts": {

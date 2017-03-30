@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-api-share",
-  "version": "0.0.3",
+  "version": "0.0.9",
   "description": "",
   "main": "lib/index.js",
   "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",

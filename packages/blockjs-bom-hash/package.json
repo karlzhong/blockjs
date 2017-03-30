@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs-bom-hash",
-  "version": "0.0.3",
+  "version": "0.0.9",
   "description": "hash",
   "main": "lib/index.js",
   "scripts": {
