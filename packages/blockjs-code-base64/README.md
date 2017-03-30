@@ -5,24 +5,16 @@ base64编码
 
 ## 使用
 ```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装base64模块
+$ tnpm install @tencent/blockjs-code-base64 --save
 
 # 引入
-import {encode as Base64Encode} from '@tencent/blockjs-code-base64'
+const Base64 = require('@tencent/blockjs-code-base64')
 
-# or
-
-import {decode as Base64Decode} from '@tencent/blockjs-code-base64'
-
-# or
-
-import {encode, decode} from '@tencent/blockjs-code-base64'
-
-# or
-
-import {encode as Base64Encode, decode as Base64Decode} from '@tencent/blockjs-code-base64'
-
-# use
-Base64Encode('xxx')
-Base64Decode('xxx')
+# 样例
+Base64.encode('xxx')
+Base64.decode('xxx')
 ```

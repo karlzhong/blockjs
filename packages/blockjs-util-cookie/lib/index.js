@@ -1,6 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (factory((global['blockjs-util-cookie'] = global['blockjs-util-cookie'] || {})));
+}(this, (function (exports) { 'use strict';
 
 /**
  * cookie
@@ -29,3 +31,7 @@ exports.getCookie = getCookie;
 exports.setCookie = setCookie;
 exports.delCookie = delCookie;
 exports.getUin = getUin;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

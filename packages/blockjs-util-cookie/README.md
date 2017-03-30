@@ -11,6 +11,15 @@ cookie相关操作
 
 ## 使用
 ```
-// 引入
-import {setCookie, getCookie, delCookie, getUin} from '@tencent/blockjs-util-cookie'
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装cookie模块
+$ tnpm install @tencent/blockjs-util-cookie --save
+
+# 引入
+const cookie = require('@tencent/blockjs-util-cookie')
+
+cookie.getCookie('xxx')
+
 ```

@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs",
-  "version": "1.1.3",
+  "version": "1.1.5",
   "description": "blocks of js",
   "main": "index.js",
   "scripts": {
@@ -17,20 +17,20 @@
   "author": "karl",
   "license": "ISC",
   "dependencies": {
-    "@tencent/blockjs-util-os": "0.0.8",
-    "@tencent/blockjs-util-cookie": "0.0.6",
-    "@tencent/blockjs-report-monitor": "0.0.6",
-    "@tencent/blockjs-report-cgi": "0.0.6",
-    "@tencent/blockjs-date-format": "0.0.3",
-    "@tencent/blockjs-code-base64": "0.0.3",
-    "@tencent/blockjs-code-html": "0.0.3",
-    "@tencent/blockjs-code-token": "0.0.3",
-    "@tencent/blockjs-bom-search": "0.0.3",
-    "@tencent/blockjs-bom-hash": "0.0.3",
-    "@tencent/blockjs-api-openqq": "0.0.3",
-    "@tencent/blockjs-util-loadscript": "0.0.3",
-    "@tencent/blockjs-api-share": "0.0.3",
-    "@tencent/blockjs-string-getmaxlen": "0.0.4"
+    "@tencent/blockjs-util-os": "0.0.9",
+    "@tencent/blockjs-util-cookie": "0.0.9",
+    "@tencent/blockjs-report-monitor": "0.0.9",
+    "@tencent/blockjs-report-cgi": "0.0.9",
+    "@tencent/blockjs-date-format": "0.0.9",
+    "@tencent/blockjs-code-base64": "0.0.9",
+    "@tencent/blockjs-code-html": "0.0.9",
+    "@tencent/blockjs-code-token": "0.0.9",
+    "@tencent/blockjs-bom-search": "0.0.9",
+    "@tencent/blockjs-bom-hash": "0.0.9",
+    "@tencent/blockjs-api-openqq": "0.0.9",
+    "@tencent/blockjs-util-loadscript": "0.0.9",
+    "@tencent/blockjs-api-share": "0.0.9",
+    "@tencent/blockjs-string-getmaxlen": "0.0.9"
   },
   "devDependencies": {
     "buble": "^0.15.1",

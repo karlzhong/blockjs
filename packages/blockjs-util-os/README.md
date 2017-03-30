@@ -18,6 +18,16 @@
 
 ## 使用
 ```
-// 引入，需要什么就引什么
-import { isAndroid, isIOS} from '@tencent/blockjs-util-os'
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装os模块
+$ tnpm install @tencent/blockjs-util-os --save
+
+# 引入
+const os = require('@tencent/blockjs-util-os')
+
+os.isAndroid()
+os.isIOS()
+
 ```

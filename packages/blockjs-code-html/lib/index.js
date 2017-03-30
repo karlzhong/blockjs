@@ -1,6 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (factory((global['blockjs-code-html'] = global['blockjs-code-html'] || {})));
+}(this, (function (exports) { 'use strict';
 
 /**
  * html encode & decode
@@ -53,3 +55,7 @@ function encodeHtml(s) {
 
 exports.decodeHtml = decodeHtml;
 exports.encodeHtml = encodeHtml;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

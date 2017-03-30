@@ -8,7 +8,7 @@
 # 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
 
 # 引入
-import openQQ from '@tencent/blockjs-api-openqq'
+const openQQ = require('@tencent/blockjs-api-openqq')
 
 # use
 openQQ('xxxx.html')

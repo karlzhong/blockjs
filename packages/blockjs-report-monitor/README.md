@@ -5,16 +5,21 @@
 
 ## 使用
 ```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装monitor模块
+$ tnpm install @tencent/blockjs-report-monitor --save
 
 # 引入
-import {setTable, monitorReport} from '@tencent/blockjs-report-monitor'
+const report = require('@tencent/blockjs-report-monitor')
+
 
 # 设置上报属性
-setTable({
+report.setTable({
     '1': [0,2581323]
 });
 
 # 上报
-monitorReport(1);
+report.monitorReport(1);
 ```

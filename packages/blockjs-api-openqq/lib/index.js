@@ -1,6 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (factory((global['blockjs-api-openqq'] = global['blockjs-api-openqq'] || {})));
+}(this, (function (exports) { 'use strict';
 
 /**
  * 手Q外打开页面调起手Q
@@ -56,3 +58,7 @@ function openQQ(jumpURL, changeURL) {
 }
 
 exports.openQQ = openQQ;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

@@ -1,6 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (factory((global['blockjs-util-os'] = global['blockjs-util-os'] || {})));
+}(this, (function (exports) { 'use strict';
 
 /**
  * 获取当前操作系统类型
@@ -51,3 +53,7 @@ exports.isTablet = isTablet;
 exports.isPhone = isPhone;
 exports.isIOS = isIOS;
 exports.isPc = isPc;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

@@ -77,7 +77,8 @@ components.map(item => {
 
             // 另一种是rollup本身api的生成
             bundle.write({
-                format: 'cjs',
+                format: 'umd',
+                moduleName: componentName,
                 dest: distFile,
                 sourceMap: false
             }).then(() => {

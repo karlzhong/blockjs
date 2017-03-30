@@ -1,6 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (factory((global['blockjs-report-cgi'] = global['blockjs-report-cgi'] || {})));
+}(this, (function (exports) { 'use strict';
 
 /**
  * 返回码上报
@@ -31,3 +33,7 @@ function cgiReport(ref) {
 }
 
 exports.cgiReport = cgiReport;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));

@@ -5,10 +5,14 @@
 
 ## 使用
 ```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装loadScript模块
+$ tnpm install @tencent/blockjs-util-loadScript --save
 
 # 引入
-import loadScript from '@tencent/blockjs-util-loadScript'
+const loadScript = require('@tencent/blockjs-util-loadScript')
 
 # use
 loadScript('xxxx.js',function(){

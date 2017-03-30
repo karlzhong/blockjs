@@ -8,7 +8,7 @@ token
 # 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
 
 # 引入
-import getCSRFToken from '@tencent/blockjs-code-token'
+const getCSRFToken = require('@tencent/blockjs-code-token')
 
 var csrf_token = getCSRFToken();
 

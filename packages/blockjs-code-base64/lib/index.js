@@ -1,6 +1,8 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (factory((global['blockjs-code-base64'] = global['blockjs-code-base64'] || {})));
+}(this, (function (exports) { 'use strict';
 
 /**
  * base64
@@ -123,3 +125,7 @@ function decode(input) {
 
 exports.encode = encode;
 exports.decode = decode;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
