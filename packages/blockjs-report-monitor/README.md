@@ -3,18 +3,30 @@
 ## 简介
 前端页面monitor上报接口
 
-## 使用
+## Using npm:
+```shell
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装子模块
+$ tnpm install @tencent/blockjs-report-monitor --save
 ```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
 
-# 引入
-import {setTable, monitorReport} from '@tencent/blockjs-report-monitor'
+## 使用
+```js
 
-# 设置上报属性
-setTable({
+// 引入
+const report = require('@tencent/blockjs-report-monitor')
+
+// or
+
+import report from '@tencent/blockjs-report-monitor'
+
+// 设置上报属性
+report.setTable({
     '1': [0,2581323]
 });
 
-# 上报
-monitorReport(1);
+// 上报
+report.monitorReport(1);
 ```

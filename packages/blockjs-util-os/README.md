@@ -16,8 +16,27 @@
 - isIOS 
 - isPc 
 
-## 使用
+
+## Using npm:
+```shell
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装子模块
+$ tnpm install @tencent/blockjs-util-os --save
 ```
-// 引入，需要什么就引什么
-import { isAndroid, isIOS} from '@tencent/blockjs-util-os'
+
+## 使用
+```js
+
+// 引入
+const os = require('@tencent/blockjs-util-os')
+
+// or
+import os from '@tencent/blockjs-util-os'
+
+// use
+os.isAndroid()
+os.isIOS()
+
 ```

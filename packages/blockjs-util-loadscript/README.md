@@ -3,15 +3,28 @@
 ## 简介
 脚步异步加载函数
 
-## 使用
-```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
+## Using npm:
+```shell
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
 
-# 引入
+# 只安装子模块
+$ tnpm install @tencent/blockjs-util-loadScript --save
+```
+
+
+## 使用
+```js
+
+// 引入
+const loadScript = require('@tencent/blockjs-util-loadScript')
+
+// or
 import loadScript from '@tencent/blockjs-util-loadScript'
 
-# use
+// use
 loadScript('xxxx.js',function(){
     //callback
 })
+
 ```

@@ -3,26 +3,27 @@
 ## 简介
 base64编码
 
-## 使用
+## Using npm:
+```shell
+# 全部安装blockjs
+$ tnpm install @tencent/blockjs --save
+
+# 只安装base64模块
+$ tnpm install @tencent/blockjs-code-base64 --save
 ```
-# 前提是已经安装了blockjs依赖 $ tnpm install @tencent/blockjs --save
 
-# 引入
-import {encode as Base64Encode} from '@tencent/blockjs-code-base64'
+## 使用
+```js
 
-# or
 
-import {decode as Base64Decode} from '@tencent/blockjs-code-base64'
+// 引入
+const Base64 = require('@tencent/blockjs-code-base64')
 
-# or
+// or
+import Base64 from '@tencent/blockjs-code-base64'
 
-import {encode, decode} from '@tencent/blockjs-code-base64'
+// 样例
+Base64.encode('xxx')
+Base64.decode('xxx')
 
-# or
-
-import {encode as Base64Encode, decode as Base64Decode} from '@tencent/blockjs-code-base64'
-
-# use
-Base64Encode('xxx')
-Base64Decode('xxx')
 ```

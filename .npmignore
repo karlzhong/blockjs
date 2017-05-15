@@ -16,3 +16,4 @@ coverage
 fbi/
 node_modules
 *.zip
+packages
