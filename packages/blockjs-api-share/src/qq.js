@@ -72,6 +72,7 @@ var onShareHandler = function (type) {
 
     mqq.ui.shareMessage(_shareData, function (res) {
         //这里可以添加分享成功的上报
+        shareData.onShareSuccess && shareData.onShareSuccess()
     })
 
 

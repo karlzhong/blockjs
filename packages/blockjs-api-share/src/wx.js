@@ -53,6 +53,8 @@ function onBridgeReady() {
             img_url: shareData.imageUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QQ)
         }, errorFun)
+        // 微信没有给分享成功的回调，这里默认成功了
+        shareData.onShareSuccess && shareData.onShareSuccess()
     })
 
     // 分享到空间
@@ -63,6 +65,8 @@ function onBridgeReady() {
             img_url: shareData.imageUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QZONE)
         }, errorFun)
+        // 微信没有给分享成功的回调，这里默认成功了        
+        shareData.onShareSuccess && shareData.onShareSuccess()
     })
 
     // 朋友圈 
@@ -75,6 +79,8 @@ function onBridgeReady() {
             img_url: shareData.imageUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_TIMELINE)
         }, errorFun)
+        // 微信没有给分享成功的回调，这里默认成功了        
+        shareData.onShareSuccess && shareData.onShareSuccess()
     })
 
     //同步到腾讯微博（新版本微信已去除该按钮）
@@ -95,5 +101,7 @@ function onBridgeReady() {
             title: shareData.title,
             desc: shareData.desc,
         }, errorFun)
+        // 微信没有给分享成功的回调，这里默认成功了        
+        shareData.onShareSuccess && shareData.onShareSuccess()
     })
 }
