@@ -36,7 +36,8 @@ function checkShareData({
     puin,
     sourceName,
     adtagName,
-    adtagVal
+    adtagVal,
+    onShareSuccess,
 }) {
     let _adtagName = adtagName || 'adtag'
 
@@ -49,6 +50,7 @@ function checkShareData({
         puin: puin || undefined,
         sourceName: sourceName || undefined,
         adtagName: _adtagName,
-        adtagVal: adtagVal || 'FROM_to_TO'
+        adtagVal: adtagVal || 'FROM_to_TO',
+        onShareSuccess,
     }
 }

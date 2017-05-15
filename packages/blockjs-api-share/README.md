@@ -18,6 +18,7 @@ blockjsShare({
     desc: "分享文案",
     url: "分享url（可选，默认为当前页面url）",
     imgUrl: "分享缩略图url，可以使用相对路径",
+    onShareSuccess:function(){} //分享成功回调，目前还没支持空间独立版
 })
 ```
 
@@ -31,6 +32,8 @@ blockjsShare({
     url: "分享url",
     imgUrl: "img url",
     wxTitle: "朋友圈标题（可选，默认为title）",
+
+    onShareSuccess:function(){} //分享成功回调，目前还没支持空间独立版    
 
     // QQ内小尾巴相关设置
     puin: 2720152058, 
