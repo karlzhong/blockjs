@@ -53,7 +53,6 @@ function onBridgeReady() {
             img_url: shareData.imageUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QQ)
         }, errorFun)
-
         // 微信没有给分享成功的回调，这里默认成功了
         shareData.onShareSuccess && shareData.onShareSuccess()
     })
