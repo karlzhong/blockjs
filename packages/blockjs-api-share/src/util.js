@@ -22,8 +22,9 @@ export function toAbsPath(relativelyURL) {
  * @returns {string} 处理后的URL
  */
 export function clearUrlParam(url, name) {
-    let reg = new RegExp(`(?|&)${key}=($|&)`, 'g')
-    return path.replace(reg, '$1');
+    var emptyStr = "";
+    var reg = new RegExp(("(\\"  + "?|&)" + name + "=($|&)"), 'g');
+    return url.replace(reg, '$1');
 }
 
 /**
@@ -34,7 +35,7 @@ export function clearUrlParam(url, name) {
  * @returns {string} 处理后的URL
  */
 export function addUrlParam(url, name, val) {
-    return url + (location.href.match('?') ? '&' : '?') + name + '=' + val;
+    return url + (location.href.indexOf('\?') != -1 ? '&' : '?') + name + '=' + val;
 }
 
 /**
