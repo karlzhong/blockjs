@@ -33,7 +33,7 @@ var ADTAG_OTHER = 'other';
  * @returns {string} 处理后的URL
  */
 function addUrlParam(url, name, val) {
-    return url + (location.href.match('?') ? '&' : '?') + name + '=' + val;
+    return url + (location.href.indexOf('\?') != -1 ? '&' : '?') + name + '=' + val;
 }
 
 /**

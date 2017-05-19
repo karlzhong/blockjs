@@ -28,8 +28,9 @@ function toAbsPath(relativelyURL) {
  * @returns {string} 处理后的URL
  */
 function clearUrlParam(url, name) {
-    var reg = new RegExp(("(?|&)" + key + "=($|&)"), 'g');
-    return path.replace(reg, '$1');
+    var emptyStr = "";
+    var reg = new RegExp(("(\\"  + "?|&)" + name + "=($|&)"), 'g');
+    return url.replace(reg, '$1');
 }
 
 /**
@@ -40,7 +41,7 @@ function clearUrlParam(url, name) {
  * @returns {string} 处理后的URL
  */
 function addUrlParam(url, name, val) {
-    return url + (location.href.match('?') ? '&' : '?') + name + '=' + val;
+    return url + (location.href.indexOf('\?') != -1 ? '&' : '?') + name + '=' + val;
 }
 
 /**
@@ -99,9 +100,11 @@ function onBridgeReady() {
         _WeixinJSBridge.invoke("shareQQ", {
             title: shareData.title,
             desc: shareData.desc,
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QQ)
         }, errorFun);
+        // 微信没有给分享成功的回调，这里默认成功了
+        shareData.onShareSuccess && shareData.onShareSuccess();
     });
 
     // 分享到空间
@@ -109,9 +112,11 @@ function onBridgeReady() {
         _WeixinJSBridge.invoke("shareQZone", {
             title: shareData.title,
             desc: shareData.desc,
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QZONE)
         }, errorFun);
+        // 微信没有给分享成功的回调，这里默认成功了        
+        shareData.onShareSuccess && shareData.onShareSuccess();
     });
 
     // 朋友圈 
@@ -121,9 +126,11 @@ function onBridgeReady() {
             img_height: IMG_SIZE,
             title: shareData.wxTitle || shareData.title, // 优先使用wxTitle
             desc: shareData.desc, //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_TIMELINE)
         }, errorFun);
+        // 微信没有给分享成功的回调，这里默认成功了        
+        shareData.onShareSuccess && shareData.onShareSuccess();
     });
 
     //同步到腾讯微博（新版本微信已去除该按钮）
@@ -137,13 +144,15 @@ function onBridgeReady() {
     //分享给朋友
     _WeixinJSBridge.on(MENU_SHARE + 'appmessage', function (argv) {
         _WeixinJSBridge.invoke("sendAppMessage", {
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             img_width: IMG_SIZE,
             img_height: IMG_SIZE,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_WX),
             title: shareData.title,
             desc: shareData.desc,
         }, errorFun);
+        // 微信没有给分享成功的回调，这里默认成功了        
+        shareData.onShareSuccess && shareData.onShareSuccess();
     });
 }
 
@@ -172,20 +181,21 @@ var onShareHandler = function (type) {
     var wxTitle = shareData$1.wxTitle;
     var desc = shareData$1.desc;
     var imgUrl = shareData$1.imgUrl;
+    var shareUrl;
 
     //这里可以根据type调整链接参数
     switch (type) {
         case 0:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QQ);
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QQ);
             break
         case 1:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QZONE);
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QZONE);
             break
         case 2:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_WX);
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_WX);
             break
         case 3:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_TIMELINE);
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_TIMELINE);
             break
     }
     // 分享到朋友圈之后，由于只显示title，这里往往要对title做一定修改
@@ -210,8 +220,8 @@ var onShareHandler = function (type) {
 
     mqq.ui.shareMessage(_shareData, function (res) {
         //这里可以添加分享成功的上报
+        shareData$1.onShareSuccess && shareData$1.onShareSuccess();
     });
-
 
 };
 
@@ -265,6 +275,7 @@ function checkShareData(ref) {
     var sourceName = ref.sourceName;
     var adtagName = ref.adtagName;
     var adtagVal = ref.adtagVal;
+    var onShareSuccess = ref.onShareSuccess;
 
     var _adtagName = adtagName || 'adtag';
 
@@ -277,7 +288,8 @@ function checkShareData(ref) {
         puin: puin || undefined,
         sourceName: sourceName || undefined,
         adtagName: _adtagName,
-        adtagVal: adtagVal || 'FROM_to_TO'
+        adtagVal: adtagVal || 'FROM_to_TO',
+        onShareSuccess: onShareSuccess,
     }
 }
 

@@ -28,7 +28,8 @@ function toAbsPath(relativelyURL) {
  * @returns {string} 处理后的URL
  */
 function clearUrlParam(url, name) {
-    var reg = new RegExp(("(\?|&)" + name + "=($|&)"), 'g');
+    var emptyStr = "";
+    var reg = new RegExp(("(\\"  + "?|&)" + name + "=($|&)"), 'g');
     return url.replace(reg, '$1');
 }
 
@@ -40,7 +41,7 @@ function clearUrlParam(url, name) {
  * @returns {string} 处理后的URL
  */
 function addUrlParam(url, name, val) {
-    return url + (location.href.indexOf('\?')!=-1  ? '&' : '?') + name + '=' + val;
+    return url + (location.href.indexOf('\?') != -1 ? '&' : '?') + name + '=' + val;
 }
 
 /**
