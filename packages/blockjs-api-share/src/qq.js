@@ -34,20 +34,21 @@ var onShareHandler = function (type) {
         desc,
         imgUrl
     } = shareData
+    let shareUrl;
 
     //这里可以根据type调整链接参数
     switch (type) {
         case 0:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QQ)
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QQ)
             break
         case 1:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QZONE)
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QZONE)
             break
         case 2:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_WX)
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_WX)
             break
         case 3:
-            addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_TIMELINE)
+            shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_TIMELINE)
             break
     }
     // 分享到朋友圈之后，由于只显示title，这里往往要对title做一定修改
@@ -74,6 +75,5 @@ var onShareHandler = function (type) {
         //这里可以添加分享成功的上报
         shareData.onShareSuccess && shareData.onShareSuccess()
     })
-
 
 }
