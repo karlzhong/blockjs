@@ -50,7 +50,7 @@ function onBridgeReady() {
         _WeixinJSBridge.invoke("shareQQ", {
             title: shareData.title,
             desc: shareData.desc,
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QQ)
         }, errorFun)
         // 微信没有给分享成功的回调，这里默认成功了
@@ -62,7 +62,7 @@ function onBridgeReady() {
         _WeixinJSBridge.invoke("shareQZone", {
             title: shareData.title,
             desc: shareData.desc,
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_QZONE)
         }, errorFun)
         // 微信没有给分享成功的回调，这里默认成功了        
@@ -76,7 +76,7 @@ function onBridgeReady() {
             img_height: IMG_SIZE,
             title: shareData.wxTitle || shareData.title, // 优先使用wxTitle
             desc: shareData.desc, //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_TIMELINE)
         }, errorFun)
         // 微信没有给分享成功的回调，这里默认成功了        
@@ -94,7 +94,7 @@ function onBridgeReady() {
     //分享给朋友
     _WeixinJSBridge.on(MENU_SHARE + 'appmessage', function (argv) {
         _WeixinJSBridge.invoke("sendAppMessage", {
-            img_url: shareData.imageUrl,
+            img_url: shareData.imgUrl,
             img_width: IMG_SIZE,
             img_height: IMG_SIZE,
             link: addAdtag(shareData.url, shareData.adtagName, shareData.adtagVal, ADTAG_WX, ADTAG_WX),
