@@ -1,13 +1,18 @@
 # blockjs-api-share
 
 ## 简介
-分享组件
+分享组件，分享后会自动给链接加上adtag，有定制需求欢迎联系cheeqi
 
 ## 使用方式
 
 npm引入方式
 ```js 
 import * as blockjsShare from 'blockjs-api-share'
+```
+
+cdn引入
+```html
+<script src="http://sqimg.qq.com/qq_product_operations/jslib/blockjsShare.min.js"></script>
 ```
 
 基本设置
