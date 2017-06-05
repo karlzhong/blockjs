@@ -1,4 +1,4 @@
-# blockjs-api-share
+# blockjs-api-share
 
 ## 简介
 分享组件，分享后会自动给链接加上adtag，有定制需求欢迎联系cheeqi
