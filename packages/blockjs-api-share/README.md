@@ -49,3 +49,7 @@ blockjsShare({
     adtagVal: "FROM_to_TO"      // 分享之后，adtag的值，FROM代表来源，TO代表分享目的。例如 `"FROM_to_TO"` 分享之后adtag的值会变成 `wx_to_qq`。
 })
 ```
+
+#更新内容
+
+* 2017-06-26 fix 在修改 adtag 时误将有用参数删除的问题

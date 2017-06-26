@@ -63,12 +63,13 @@ var onShareHandler = function (type) {
         share_url: shareUrl,
     }
 
-    if (shareData.puin !== undefined) {
-        _shareData.puin = shareData.puin
-    }
+    const EXT_KEYS = ['puin', 'sourceName', 'src_iconUrl', 'src_action', 'src_actionData']
 
-    if (shareData.sourceName !== undefined) {
-        _shareData.sourceName = shareData.sourceName
+    for (let i in EXT_KEYS) {
+        let key = EXT_KEYS[i]
+        if (shareData[key] !== undefined) {
+            _shareData[key] = shareData[key]
+        }
     }
 
     mqq.ui.shareMessage(_shareData, function (res) {

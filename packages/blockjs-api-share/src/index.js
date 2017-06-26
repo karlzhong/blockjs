@@ -38,6 +38,9 @@ function checkShareData({
     adtagName,
     adtagVal,
     onShareSuccess,
+    src_iconUrl,
+    src_action,
+    src_actionData
 }) {
     let _adtagName = adtagName || 'adtag'
 
@@ -52,5 +55,8 @@ function checkShareData({
         adtagName: _adtagName,
         adtagVal: adtagVal || 'FROM_to_TO',
         onShareSuccess,
+        src_iconUrl,
+        src_action,
+        src_actionData
     }
 }

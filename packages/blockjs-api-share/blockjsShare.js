@@ -29,7 +29,7 @@ function toAbsPath(relativelyURL) {
  */
 function clearUrlParam(url, name) {
     var emptyStr = "";
-    var reg = new RegExp(("(\\"  + "?|&)" + name + "=($|&)"), 'g');
+    var reg = new RegExp(("(\\" + "?|&)" + name + "=.*?($|&)"), 'g');
     return url.replace(reg, '$1');
 }
 
@@ -41,7 +41,10 @@ function clearUrlParam(url, name) {
  * @returns {string} 处理后的URL
  */
 function addUrlParam(url, name, val) {
-    return url + (location.href.indexOf('\?') != -1 ? '&' : '?') + name + '=' + val;
+    var ref = url.split('#');
+    var preUrl = ref[0];
+    var hash = ref[1];
+    return preUrl + (url.indexOf('\?') != -1 ? '&' : '?') + name + '=' + val + (hash ? '#' + hash : '');
 }
 
 /**
@@ -210,12 +213,13 @@ var onShareHandler = function (type) {
         share_url: shareUrl,
     };
 
-    if (shareData$1.puin !== undefined) {
-        _shareData.puin = shareData$1.puin;
-    }
+    var EXT_KEYS = ['puin', 'sourceName', 'src_iconUrl', 'src_action', 'src_actionData'];
 
-    if (shareData$1.sourceName !== undefined) {
-        _shareData.sourceName = shareData$1.sourceName;
+    for (var i in EXT_KEYS) {
+        var key = EXT_KEYS[i];
+        if (shareData$1[key] !== undefined) {
+            _shareData[key] = shareData$1[key];
+        }
     }
 
     mqq.ui.shareMessage(_shareData, function (res) {
@@ -276,6 +280,9 @@ function checkShareData(ref) {
     var adtagName = ref.adtagName;
     var adtagVal = ref.adtagVal;
     var onShareSuccess = ref.onShareSuccess;
+    var src_iconUrl = ref.src_iconUrl;
+    var src_action = ref.src_action;
+    var src_actionData = ref.src_actionData;
 
     var _adtagName = adtagName || 'adtag';
 
@@ -290,6 +297,9 @@ function checkShareData(ref) {
         adtagName: _adtagName,
         adtagVal: adtagVal || 'FROM_to_TO',
         onShareSuccess: onShareSuccess,
+        src_iconUrl: src_iconUrl,
+        src_action: src_action,
+        src_actionData: src_actionData
     }
 }
 
