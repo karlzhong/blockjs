@@ -185,6 +185,7 @@ var onShareHandler = function (type) {
     var desc = shareData$1.desc;
     var imgUrl = shareData$1.imgUrl;
     var shareUrl;
+    type = type + ""; //type似乎有时候是字符串，有时候又是数字，这里统一转换成字符串
 
     //这里可以根据type调整链接参数
     switch (type) {
