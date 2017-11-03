@@ -35,24 +35,25 @@ var onShareHandler = function (type) {
         imgUrl
     } = shareData
     let shareUrl;
+    type = type + "" //type似乎有时候是字符串，有时候又是数字，这里统一转换成字符串
 
     //这里可以根据type调整链接参数
     switch (type) {
-        case 0:
+        case '0':
             shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QQ)
             break
-        case 1:
+        case '1':
             shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_QZONE)
             break
-        case 2:
+        case '2':
             shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_WX)
             break
-        case 3:
+        case '3':
             shareUrl = addAdtag(url, adtagName, adtagVal, ADTAG_QQ, ADTAG_TIMELINE)
             break
     }
     // 分享到朋友圈之后，由于只显示title，这里往往要对title做一定修改
-    let shareTitle = type == 3 ? wxTitle || title : title
+    let shareTitle = type == '3' ? wxTitle || title : title
 
     let _shareData = {
         title: shareTitle,
