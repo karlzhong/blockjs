@@ -1,6 +1,6 @@
 {
   "name": "@tencent/blockjs",
-  "version": "1.2.1",
+  "version": "1.2.3",
   "description": "业务开发常用js模块",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "@tencent/blockjs-bom-hash": "0.0.11",
     "@tencent/blockjs-api-openqq": "0.0.11",
     "@tencent/blockjs-util-loadscript": "0.0.11",
-    "@tencent/blockjs-api-share": "0.0.15",
+    "@tencent/blockjs-api-share": "0.0.14",
     "@tencent/blockjs-string-getmaxlen": "0.0.11"
   },
   "devDependencies": {
