@@ -20,16 +20,13 @@
     "@tencent/blockjs-util-os": "0.0.11",
     "@tencent/blockjs-util-cookie": "0.0.11",
     "@tencent/blockjs-report-monitor": "0.0.11",
-    "@tencent/blockjs-report-cgi": "0.0.11",
     "@tencent/blockjs-date-format": "0.0.11",
     "@tencent/blockjs-code-base64": "0.0.11",
     "@tencent/blockjs-code-html": "0.0.11",
     "@tencent/blockjs-code-token": "0.0.11",
     "@tencent/blockjs-bom-search": "0.0.11",
     "@tencent/blockjs-bom-hash": "0.0.11",
-    "@tencent/blockjs-api-openqq": "0.0.11",
     "@tencent/blockjs-util-loadscript": "0.0.11",
-    "@tencent/blockjs-api-share": "0.0.14",
     "@tencent/blockjs-string-getmaxlen": "0.0.11"
   },
   "devDependencies": {
