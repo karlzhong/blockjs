@@ -12,20 +12,20 @@ cookie相关操作
 ## Using npm:
 ```shell
 # 全部安装blockjs
-$ tnpm install @tencent/blockjs --save
+$ tnpm install @karlzhong/blockjs --save
 
 # 只安装子模块
-$ tnpm install @tencent/blockjs-util-cookie --save
+$ tnpm install @karlzhong/blockjs-util-cookie --save
 ```
 
 ## 使用
 ```js
 
 // 引入
-const cookie = require('@tencent/blockjs-util-cookie')
+const cookie = require('@karlzhong/blockjs-util-cookie')
 
 // or
-import cookie from '@tencent/blockjs-util-cookie'
+import cookie from '@karlzhong/blockjs-util-cookie'
 
 cookie.getCookie('xxx')
 

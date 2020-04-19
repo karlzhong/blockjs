@@ -1,12 +1,12 @@
 {
-  "name": "@tencent/blockjs-util-os",
+  "name": "@karlzhong/blockjs-util-os",
   "version": "0.0.11",
   "description": "os",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "repository": "https://github.com/karlzhong/blockjs.git",
   "keywords": [
     "util",
     "os"

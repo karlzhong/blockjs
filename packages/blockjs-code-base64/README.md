@@ -6,10 +6,10 @@ base64编码
 ## Using npm:
 ```shell
 # 全部安装blockjs
-$ tnpm install @tencent/blockjs --save
+$ tnpm install @karlzhong/blockjs --save
 
 # 只安装base64模块
-$ tnpm install @tencent/blockjs-code-base64 --save
+$ tnpm install @karlzhong/blockjs-code-base64 --save
 ```
 
 ## 使用
@@ -17,10 +17,10 @@ $ tnpm install @tencent/blockjs-code-base64 --save
 
 
 // 引入
-const Base64 = require('@tencent/blockjs-code-base64')
+const Base64 = require('@karlzhong/blockjs-code-base64')
 
 // or
-import Base64 from '@tencent/blockjs-code-base64'
+import Base64 from '@karlzhong/blockjs-code-base64'
 
 // 样例
 Base64.encode('xxx')

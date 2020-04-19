@@ -6,10 +6,10 @@
 ## Using npm:
 ```shell
 # 全部安装blockjs
-$ tnpm install @tencent/blockjs --save
+$ tnpm install @karlzhong/blockjs --save
 
 # 只安装子模块
-$ tnpm install @tencent/blockjs-util-loadScript --save
+$ tnpm install @karlzhong/blockjs-util-loadScript --save
 ```
 
 
@@ -17,10 +17,10 @@ $ tnpm install @tencent/blockjs-util-loadScript --save
 ```js
 
 // 引入
-const loadScript = require('@tencent/blockjs-util-loadScript')
+const loadScript = require('@karlzhong/blockjs-util-loadScript')
 
 // or
-import loadScript from '@tencent/blockjs-util-loadScript'
+import loadScript from '@karlzhong/blockjs-util-loadScript'
 
 // use
 loadScript('xxxx.js',function(){

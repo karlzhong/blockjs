@@ -20,20 +20,20 @@
 ## Using npm:
 ```shell
 # 全部安装blockjs
-$ tnpm install @tencent/blockjs --save
+$ tnpm install @karlzhong/blockjs --save
 
 # 只安装子模块
-$ tnpm install @tencent/blockjs-util-os --save
+$ tnpm install @karlzhong/blockjs-util-os --save
 ```
 
 ## 使用
 ```js
 
 // 引入
-const os = require('@tencent/blockjs-util-os')
+const os = require('@karlzhong/blockjs-util-os')
 
 // or
-import os from '@tencent/blockjs-util-os'
+import os from '@karlzhong/blockjs-util-os'
 
 // use
 os.isAndroid()

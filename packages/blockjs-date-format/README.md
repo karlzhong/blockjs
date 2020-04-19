@@ -6,21 +6,21 @@
 ## Using npm:
 ```shell
 # 全部安装blockjs
-$ tnpm install @tencent/blockjs --save
+$ tnpm install @karlzhong/blockjs --save
 
 # 只安装子模块
-$ tnpm install @tencent/blockjs-data-format --save
+$ tnpm install @karlzhong/blockjs-data-format --save
 ```
 
 ## 使用
 ```js
 
 // 引入
-const dateFormat = require('@tencent/blockjs-code-token')
+const dateFormat = require('@karlzhong/blockjs-code-token')
 
 // or
 
-import dateFormat from '@tencent/blockjs-code-token'
+import dateFormat from '@karlzhong/blockjs-code-token'
 
 // use
 const data = dateFormat({date:new Date().getTime(),format:'yy-mm-dd'});

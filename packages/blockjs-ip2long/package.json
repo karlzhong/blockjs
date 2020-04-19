@@ -1,12 +1,12 @@
 {
-  "name": "@tencent/blockjs-ip2long",
+  "name": "@karlzhong/blockjs-ip2long",
   "version": "0.0.1",
   "description": "将IP地址转换成长整形",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "repository": "https://github.com/karlzhong/blockjs.git",
   "keywords": [],
   "author": "karlzhong",
   "license": "ISC",

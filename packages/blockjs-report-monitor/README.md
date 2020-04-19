@@ -6,21 +6,21 @@
 ## Using npm:
 ```shell
 # 全部安装blockjs
-$ tnpm install @tencent/blockjs --save
+$ tnpm install @karlzhong/blockjs --save
 
 # 只安装子模块
-$ tnpm install @tencent/blockjs-report-monitor --save
+$ tnpm install @karlzhong/blockjs-report-monitor --save
 ```
 
 ## 使用
 ```js
 
 // 引入
-const report = require('@tencent/blockjs-report-monitor')
+const report = require('@karlzhong/blockjs-report-monitor')
 
 // or
 
-import report from '@tencent/blockjs-report-monitor'
+import report from '@karlzhong/blockjs-report-monitor'
 
 // 设置上报属性
 report.setTable({

@@ -1,5 +1,5 @@
 {
-  "name": "@tencent/blockjs",
+  "name": "@karlzhong/blockjs",
   "version": "1.2.3",
   "description": "业务开发常用js模块",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://git.code.oa.com/sng-fe-team/blockjs.git"
+    "url": "https://github.com/karlzhong/blockjs.git"
   },
   "keywords": [
     "block",
@@ -17,17 +17,17 @@
   "author": "karl",
   "license": "ISC",
   "dependencies": {
-    "@tencent/blockjs-util-os": "0.0.11",
-    "@tencent/blockjs-util-cookie": "0.0.11",
-    "@tencent/blockjs-report-monitor": "0.0.11",
-    "@tencent/blockjs-date-format": "0.0.11",
-    "@tencent/blockjs-code-base64": "0.0.11",
-    "@tencent/blockjs-code-html": "0.0.11",
-    "@tencent/blockjs-code-token": "0.0.11",
-    "@tencent/blockjs-bom-search": "0.0.11",
-    "@tencent/blockjs-bom-hash": "0.0.11",
-    "@tencent/blockjs-util-loadscript": "0.0.11",
-    "@tencent/blockjs-string-getmaxlen": "0.0.11"
+    "@karlzhong/blockjs-util-os": "0.0.11",
+    "@karlzhong/blockjs-util-cookie": "0.0.11",
+    "@karlzhong/blockjs-report-monitor": "0.0.11",
+    "@karlzhong/blockjs-date-format": "0.0.11",
+    "@karlzhong/blockjs-code-base64": "0.0.11",
+    "@karlzhong/blockjs-code-html": "0.0.11",
+    "@karlzhong/blockjs-code-token": "0.0.11",
+    "@karlzhong/blockjs-bom-search": "0.0.11",
+    "@karlzhong/blockjs-bom-hash": "0.0.11",
+    "@karlzhong/blockjs-util-loadscript": "0.0.11",
+    "@karlzhong/blockjs-string-getmaxlen": "0.0.11"
   },
   "devDependencies": {
     "buble": "^0.15.1",

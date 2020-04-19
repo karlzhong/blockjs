@@ -1,12 +1,12 @@
 {
-  "name": "@tencent/blockjs-date-format",
+  "name": "@karlzhong/blockjs-date-format",
   "version": "0.0.11",
   "description": "blockjs date output format",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "repository": "https://github.com/karlzhong/blockjs.git",
   "keywords": [
     "date",
     "format"

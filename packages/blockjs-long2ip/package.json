@@ -1,12 +1,12 @@
 {
-  "name": "@tencent/blockjs-long2ip",
+  "name": "@karlzhong/blockjs-long2ip",
   "version": "0.0.1",
   "description": "将长整型转换成常规IP地址",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "http://git.code.oa.com/sng-fe-team/blockjs.git",
+  "repository": "https://github.com/karlzhong/blockjs.git",
   "keywords": [],
   "author": "karlzhong",
   "license": "ISC",

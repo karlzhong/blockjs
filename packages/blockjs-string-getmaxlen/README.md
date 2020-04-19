@@ -6,21 +6,21 @@
 ## Using npm:
 ```shell
 # 全部安装blockjs
-$ tnpm install @tencent/blockjs --save
+$ tnpm install @karlzhong/blockjs --save
 
 # 只安装子模块
-$ tnpm install @tencent/blockjs-util-getmaxlen --save
+$ tnpm install @karlzhong/blockjs-util-getmaxlen --save
 ```
 
 ## 使用
 ```js
 
 // 引入
-const getmaxlen = require('@tencent/blockjs-util-getmaxlen')
+const getmaxlen = require('@karlzhong/blockjs-util-getmaxlen')
 
 // or
 
-import getmaxlen from '@tencent/blockjs-util-getmaxlen'
+import getmaxlen from '@karlzhong/blockjs-util-getmaxlen'
 
 getmaxlen('xxxxxx',10)
 
